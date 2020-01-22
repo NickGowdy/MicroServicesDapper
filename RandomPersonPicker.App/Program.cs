@@ -1,16 +1,23 @@
 ﻿using System;
+using System.Threading.Tasks;
 using RandomPersonPicker.Data.Repositories;
 
 namespace RandomPersonPicker.App
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             var personRepo = new PersonRepository();
-            var people = personRepo.Get();
-            var person = personRepo.Get(1);
+
+            var peopleTask = personRepo.Get();
+            var personTask = personRepo.Get(1);
+
+            await Task.WhenAll(peopleTask, personTask);
+
+            var people = peopleTask.Result;
+            var person = personTask.Result;
         }
     }
 }
