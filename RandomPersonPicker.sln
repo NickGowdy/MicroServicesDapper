@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomPersonPicker.Data", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomPersonPicker.Domain", "RandomPersonPicker.Domain\RandomPersonPicker.Domain.csproj", "{C2474D11-1FE7-49F3-AD58-6B9DC5B18065}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomPersonPicker.Tests", "RandomPersonPicker.Tests\RandomPersonPicker.Tests.csproj", "{E83D150C-895F-4F7D-BCBF-8A1D8571D926}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomPersonPicker.Data.Tests", "RandomPersonPicker.Tests\RandomPersonPicker.Data.Tests.csproj", "{E83D150C-895F-4F7D-BCBF-8A1D8571D926}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

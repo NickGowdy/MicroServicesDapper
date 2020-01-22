@@ -4,13 +4,13 @@ using RandomPersonPicker.Data.Repositories;
 using RandomPersonPicker.Domain.Models;
 using Xunit;
 
-namespace RandomPersonPicker.Tests.Repositories
+namespace RandomPersonPicker.Data.Tests.Repositories
 {
     public class PersonRepositoryTests
     {
         [Theory]
         [InlineData("Nick", "Gowdy")]
-        public async Task GetPerson(string forename, string surname)
+        public async Task SaveAndGetPerson(string forename, string surname)
         {
             using (var TransactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
