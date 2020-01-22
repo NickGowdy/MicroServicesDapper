@@ -16,7 +16,7 @@ namespace RandomPersonPicker.Api
             }
             catch(Exception ex)
             {
-
+                throw ex;
             }
           
         }

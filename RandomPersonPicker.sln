@@ -1,8 +1,6 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomPersonPicker.App", "RandomPersonPicker.App\RandomPersonPicker.App.csproj", "{FF68F49F-CCE2-449E-B31E-C6A95BC2D26E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomPersonPicker.Data", "RandomPersonPicker.Data\RandomPersonPicker.Data.csproj", "{8B11E0DA-A584-4D32-AE6A-FCE676BE8DFD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomPersonPicker.Domain", "RandomPersonPicker.Domain\RandomPersonPicker.Domain.csproj", "{C2474D11-1FE7-49F3-AD58-6B9DC5B18065}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FF68F49F-CCE2-449E-B31E-C6A95BC2D26E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF68F49F-CCE2-449E-B31E-C6A95BC2D26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF68F49F-CCE2-449E-B31E-C6A95BC2D26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF68F49F-CCE2-449E-B31E-C6A95BC2D26E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8B11E0DA-A584-4D32-AE6A-FCE676BE8DFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8B11E0DA-A584-4D32-AE6A-FCE676BE8DFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B11E0DA-A584-4D32-AE6A-FCE676BE8DFD}.Release|Any CPU.ActiveCfg = Release|Any CPU

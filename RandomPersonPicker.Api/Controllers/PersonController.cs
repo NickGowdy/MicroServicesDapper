@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RandomPersonPicker.Data.Interfaces.Repositories;
 using RandomPersonPicker.Domain.Models;
@@ -18,10 +19,10 @@ namespace RandomPersonPicker.Api.Controllers
 
 
         [HttpGet]
-        public async System.Threading.Tasks.Task<IEnumerable<Person>> GetAsync()
+        public async Task<IEnumerable<Person>> GetAsync()
         {
-            var people = await _personRepository.Get();
-            return people;
+            var People = await _personRepository.Get();
+            return People;
         }
     }
 }
