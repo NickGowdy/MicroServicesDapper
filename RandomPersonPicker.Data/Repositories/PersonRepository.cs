@@ -17,8 +17,8 @@ namespace RandomPersonPicker.Data.Repositories
         {
             using (_dbConnection = new SqlConnection(_connectionString))
             {
-                const string sql = @"SELECT * FROM Person";
-                return await _dbConnection.QueryAsync<Person>(sql);
+                const string Sql = @"SELECT * FROM Person";
+                return await _dbConnection.QueryAsync<Person>(Sql);
             }
         }
 
@@ -26,8 +26,8 @@ namespace RandomPersonPicker.Data.Repositories
         {
             using (_dbConnection = new SqlConnection(_connectionString))
             {
-                const string sql = @"SELECT * FROM Person WHERE PersonID = @personId";
-                return await _dbConnection.QueryFirstOrDefaultAsync<Person>(sql, new { personId });
+                const string Sql = @"SELECT * FROM Person WHERE PersonID = @personId";
+                return await _dbConnection.QueryFirstOrDefaultAsync<Person>(Sql, new { personId });
             }
         }
 

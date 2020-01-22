@@ -12,20 +12,20 @@ namespace RandomPersonPicker.Tests.Repositories
         [InlineData("Nick", "Gowdy")]
         public async Task GetPerson(string forename, string surname)
         {
-            using (var transactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
+            using (var TransactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
                 // ARRANGE
-                var personRepository = new PersonRepository();
-                var newPersonId = await personRepository.Insert(new Person { Forename = forename, Surname = surname });
+                var PersonRepository = new PersonRepository();
+                var NewPersonId = await PersonRepository.Insert(new Person { Forename = forename, Surname = surname });
 
                 // ACT
-                var person = await personRepository.Get((int)newPersonId);
+                var Person = await PersonRepository.Get((int)NewPersonId);
 
                 // ASSERT
-                Assert.NotNull(person);
-                Assert.Equal(newPersonId, person.PersonId);
-                Assert.Equal(forename, person.Forename);
-                Assert.Equal(surname, person.Surname);
+                Assert.NotNull(Person);
+                Assert.Equal(NewPersonId, Person.PersonId);
+                Assert.Equal(forename, Person.Forename);
+                Assert.Equal(surname, Person.Surname);
             }
         }
     }

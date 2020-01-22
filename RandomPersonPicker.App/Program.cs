@@ -11,13 +11,13 @@ namespace RandomPersonPicker.App
             Console.WriteLine("Hello World!");
             var personRepo = new PersonRepository();
 
-            var peopleTask = personRepo.Get();
-            var personTask = personRepo.Get(1);
+            var PeopleTask = personRepo.Get();
+            var PersonTask = personRepo.Get(1);
 
-            await Task.WhenAll(peopleTask, personTask);
+            await Task.WhenAll(PeopleTask, PersonTask);
 
-            var people = peopleTask.Result;
-            var person = personTask.Result;
+            var People = PeopleTask.Result;
+            var Person = PersonTask.Result;
         }
     }
 }
