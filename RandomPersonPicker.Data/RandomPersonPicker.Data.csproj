@@ -18,6 +18,7 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Interfaces\Factories\" />
     <Folder Include="Factories\" />
+    <Folder Include="Interfaces\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RandomPersonPicker.Domain\RandomPersonPicker.Domain.csproj" />

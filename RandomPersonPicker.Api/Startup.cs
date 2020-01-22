@@ -1,15 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using LightInject;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace RandomPersonPicker.Api
 {
@@ -26,6 +20,13 @@ namespace RandomPersonPicker.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+        }
+
+        // Use this method to add services directly to LightInject
+        // Important: This method must exist in order to replace the default provider.
+        public void ConfigureContainer(IServiceContainer container)
+        {
+            container.RegisterFrom<CompositionRoot>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

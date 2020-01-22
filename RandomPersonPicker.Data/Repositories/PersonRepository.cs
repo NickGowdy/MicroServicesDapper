@@ -3,11 +3,12 @@ using System.Threading.Tasks;
 using Dapper;
 using Dapper.Contrib.Extensions;
 using RandomPersonPicker.Data.Factories;
+using RandomPersonPicker.Data.Interfaces.Repositories;
 using RandomPersonPicker.Domain.Models;
 
 namespace RandomPersonPicker.Data.Repositories
 {
-    public class PersonRepository : DbConnectionFactory
+    public class PersonRepository : DbConnectionFactory, IPersonRepository
     {
         public async Task<IEnumerable<Person>> Get()
         {
