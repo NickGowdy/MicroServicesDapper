@@ -1,42 +1,37 @@
 ﻿using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Dapper;
 using Dapper.Contrib.Extensions;
+using RandomPersonPicker.Data.Factories;
 using RandomPersonPicker.Domain.Models;
 
 namespace RandomPersonPicker.Data.Repositories
 {
-    public class PersonRepository
+    public class PersonRepository : DbConnectionFactory
     {
-        private IDbConnection _dbConnection;
-        private readonly string _connectionString = "Server=localhost;User Id = SA;Password=<YourStrong@Passw0rd>;Initial Catalog = RandomPersonPicker";
-
         public async Task<IEnumerable<Person>> Get()
         {
-            using (_dbConnection = new SqlConnection(_connectionString))
+            using (var SqlConnection = CreateDbConnection(ConnectionString))
             {
                 const string Sql = @"SELECT * FROM Person";
-                return await _dbConnection.QueryAsync<Person>(Sql);
+                return await SqlConnection.QueryAsync<Person>(Sql);
             }
         }
 
         public async Task<Person> Get(int personId)
         {
-            using (_dbConnection = new SqlConnection(_connectionString))
+            using (var SqlConnection = CreateDbConnection(ConnectionString))
             {
                 const string Sql = @"SELECT * FROM Person WHERE PersonID = @personId";
-                return await _dbConnection.QueryFirstOrDefaultAsync<Person>(Sql, new { personId });
+                return await SqlConnection.QueryFirstOrDefaultAsync<Person>(Sql, new { personId });
             }
         }
 
         public async Task<long> Insert(Person person)
         {
-            using (_dbConnection = new SqlConnection(_connectionString))
+            using (var SqlConnection = CreateDbConnection(ConnectionString))
             {
-                return await _dbConnection.InsertAsync(person);
-
+                return await SqlConnection.InsertAsync(person);
             }
         }
     }

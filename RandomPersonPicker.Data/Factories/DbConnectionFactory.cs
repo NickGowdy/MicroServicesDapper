@@ -6,10 +6,8 @@ namespace RandomPersonPicker.Data.Factories
 {
     public class DbConnectionFactory : IDbConnectionFactory
     {
-        public IDbConnection CreateDbConnection(string connectionstring)
-        {
-            return new SqlConnection(connectionstring);
-        }
+        protected readonly string ConnectionString = "Server=localhost;User Id = SA;Password=<YourStrong@Passw0rd>;Initial Catalog = RandomPersonPicker";
+
+        public IDbConnection CreateDbConnection(string connectionstring) => new SqlConnection(connectionstring);
     }
 }
-

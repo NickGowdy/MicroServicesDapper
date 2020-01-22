@@ -4,7 +4,7 @@ using RandomPersonPicker.Data.Repositories;
 using RandomPersonPicker.Domain.Models;
 using Xunit;
 
-namespace RandomPersonPicker.Data.Tests.Repositories
+namespace RandomPersonPicker.Tests.Repositories
 {
     public class PersonRepositoryTests
     {
