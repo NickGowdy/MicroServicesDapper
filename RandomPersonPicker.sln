@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomPersonPicker.Data", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomPersonPicker.Domain", "RandomPersonPicker.Domain\RandomPersonPicker.Domain.csproj", "{C2474D11-1FE7-49F3-AD58-6B9DC5B18065}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomPersonPicker.Tests", "RandomPersonPicker.Tests\RandomPersonPicker.Tests.csproj", "{E83D150C-895F-4F7D-BCBF-8A1D8571D926}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +27,9 @@ Global
 		{C2474D11-1FE7-49F3-AD58-6B9DC5B18065}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2474D11-1FE7-49F3-AD58-6B9DC5B18065}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2474D11-1FE7-49F3-AD58-6B9DC5B18065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E83D150C-895F-4F7D-BCBF-8A1D8571D926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E83D150C-895F-4F7D-BCBF-8A1D8571D926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E83D150C-895F-4F7D-BCBF-8A1D8571D926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E83D150C-895F-4F7D-BCBF-8A1D8571D926}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
