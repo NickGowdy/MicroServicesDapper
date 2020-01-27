@@ -17,7 +17,6 @@ namespace RandomPersonPicker.Api.Controllers
             _personRepository = personRepository;
         }
 
-
         [HttpGet]
         public async Task<IEnumerable<Person>> GetAsync()
         {

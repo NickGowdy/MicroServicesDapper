@@ -35,5 +35,22 @@ namespace RandomPersonPicker.Data.Repositories
                 return await SqlConnection.InsertAsync(person);
             }
         }
+
+        public async Task<bool> Update(Person person)
+        {
+            using (var SqlConnection = CreateDbConnection(ConnectionString))
+            {
+                return await SqlConnection.UpdateAsync(person);
+            }
+        }
+
+        public async Task Delete(int personId)
+        {
+            using (var SqlConnection = CreateDbConnection(ConnectionString))
+            {
+                const string Sql = @"DELETE  FROM Person WHERE PersonID = @personId";
+                await SqlConnection.QueryAsync(Sql, new { personId });
+            }
+        }
     }
 }
