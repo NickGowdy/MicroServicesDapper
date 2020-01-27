@@ -9,7 +9,7 @@ namespace RandomPersonPicker.Tests.Repositories
     public class PersonRepositoryTests
     {
         [Theory]
-        [InlineData("Nick", "Gowdy", "John", "Smith")]
+        [InlineData("Nick", "Gowdy", "Matthew", "Green")]
         public async Task CrudPerson(string forename, string surname, string updatedForename, string updatedSurname)
         {
             using (var TransactionScope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
@@ -19,7 +19,7 @@ namespace RandomPersonPicker.Tests.Repositories
                 var PersonId = await PersonRepository.Insert(new Person { Forename = forename, Surname = surname });
 
                 // ACT
-                var Person = await PersonRepository.Get((int)PersonId);
+                var Person = await PersonRepository.Get(PersonId);
 
                 // ASSERT
                 Assert.NotNull(Person);
@@ -28,8 +28,8 @@ namespace RandomPersonPicker.Tests.Repositories
                 Assert.Equal(surname, Person.Surname);
 
                 // ACT
-                var hasUpdated = await PersonRepository.Update(new Person {PersonId = (int)PersonId, Forename = updatedForename, Surname = updatedSurname });
-                var updatedPerson = await PersonRepository.Get((int)PersonId);
+                var hasUpdated = await PersonRepository.Update(new Person {PersonId = PersonId, Forename = updatedForename, Surname = updatedSurname });
+                var updatedPerson = await PersonRepository.Get(PersonId);
 
                 // ASSERT
                 Assert.True(hasUpdated);
@@ -39,8 +39,8 @@ namespace RandomPersonPicker.Tests.Repositories
                 Assert.Equal(updatedSurname, updatedPerson.Surname);
 
                 // ACT
-                await PersonRepository.Delete((int)PersonId);
-                var DeletedPerson = await PersonRepository.Get((int)PersonId);
+                await PersonRepository.Delete(PersonId);
+                var DeletedPerson = await PersonRepository.Get(PersonId);
 
                 // ASSERT
                 Assert.Null(DeletedPerson);

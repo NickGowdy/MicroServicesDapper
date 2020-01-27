@@ -28,11 +28,18 @@ namespace RandomPersonPicker.Data.Repositories
             }
         }
 
-        public async Task<long> Insert(Person person)
+        public async Task<int> Insert(Person person)
         {
             using (var SqlConnection = CreateDbConnection(ConnectionString))
             {
-                return await SqlConnection.InsertAsync(person);
+                const string Sql = @"INSERT INTO Person([Forename],[Surname]) VALUES (@Forename, @Surname);SELECT CAST(SCOPE_IDENTITY() as int)";
+                var result = await SqlConnection.QueryFirstOrDefaultAsync<int>(Sql, new
+                {
+                    person.Forename,
+                    person.Surname
+                });
+
+                return result;
             }
         }
 
