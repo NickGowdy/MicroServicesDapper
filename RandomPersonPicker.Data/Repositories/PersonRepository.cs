@@ -55,7 +55,7 @@ namespace RandomPersonPicker.Data.Repositories
         {
             using (var SqlConnection = CreateDbConnection(ConnectionString))
             {
-                const string Sql = @"DELETE  FROM Person WHERE PersonID = @personId";
+                const string Sql = @"DELETE FROM Person WHERE PersonID = @personId";
                 await SqlConnection.QueryAsync(Sql, new { personId });
             }
         }
